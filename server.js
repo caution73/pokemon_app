@@ -13,7 +13,6 @@ app.set("view engine", "jsx")
 app.set('views', "./views") // look for the views inside the views folders
 
 app.get('/', (req, res) => {
-    console.log(pokemon)
     res.send('Welcome to the Pokemon App!')
 })
 
@@ -22,10 +21,9 @@ app.get('/pokemon', (req, res) => {
 })
 
 app.get('/pokemon/:id', (req, res) => {
-    res.send(req.params.id)
-    //res.render('Show', {
-    //    selectPokemon: pokemon[req.params.id]
-    //})
+    res.render('Show', {
+        selectPokemon: pokemon[req.params.id]
+    })
 })
 
 

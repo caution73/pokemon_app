@@ -2,19 +2,20 @@ const React = require('react')
 
 class Show extends React.Component {
     render() {
-        const {pokemon} = this.props
+        const pokeDivStyle = {
+            color: 'white',
+            backgroundColor: 'gray',
+            textAlign: 'center',
+            paddingBottom: '10vh'
+            };
+        const pokemon = this.props.selectPokemon
         return(
             <div style={pokeDivStyle}>
-                <h1>See All The Pokemon!</h1>
-                <ul>
-                    {pokemon.map((poke, index) => {
-                        let capPokemon = poke.name.charAt(0).toUpperCase() + poke.name.slice(1)
-                        return(
-                            <li key={index} style={liStyle}>{capPokemon}</li>
-                    )
-                })}
-                </ul>
-                
+                <a href="/pokemon">Back</a>
+                <h1>Gotta Catch 'Em All</h1>
+                <h2>{pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}</h2>
+                <image src={pokemon.img+'.jpg'} width='50%'/>
+                               
             </div>
             
         )
@@ -22,3 +23,4 @@ class Show extends React.Component {
 }
 
 module.exports = Show
+

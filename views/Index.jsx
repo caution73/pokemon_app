@@ -6,6 +6,7 @@ class Index extends React.Component {
             color: 'white',
             backgroundColor: 'gray',
             textAlign: 'center',
+            paddingBottom: '10vh'
             };
         const liStyle = {
             listStyleType: 'none'
